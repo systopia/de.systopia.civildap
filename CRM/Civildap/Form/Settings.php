@@ -1,5 +1,19 @@
 <?php
 
+/*-------------------------------------------------------+
+| SYSTOPIA CiviLdap Extension                            |
+| Copyright (C) 2021 SYSTOPIA                            |
+| Author: P. Batroff (batroff@systopia.de)               |
++--------------------------------------------------------+
+| This program is released as free software under the    |
+| Affero GPL license. You can redistribute it and/or     |
+| modify it under the terms of this license which you    |
+| can read by viewing the included agpl.txt or online    |
+| at www.gnu.org/licenses/agpl.html. Removal of this     |
+| copyright header is strictly prohibited without        |
+| written permission from the original author(s).        |
++--------------------------------------------------------*/
+
 use CRM_Civildap_ExtensionUtil as E;
 
 /**
@@ -32,6 +46,14 @@ class CRM_Civildap_Form_Settings extends CRM_Core_Form {
       'password',
       'ldap_password',
       E::ts('LDAP Password'),
+      array("class" => "huge"),
+      FALSE
+    );
+
+    $this->add(
+      'text',
+      'ldap_base_dn',
+      E::ts('LDAP Base DN'),
       array("class" => "huge"),
       FALSE
     );
@@ -92,6 +114,7 @@ class CRM_Civildap_Form_Settings extends CRM_Core_Form {
       'ldap_server_url',
       'ldap_user',
       'ldap_password',
+      'ldap_base_dn',
     );
   }
 

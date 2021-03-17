@@ -32,6 +32,11 @@
     <div class="content">{$form.ldap_password.html}</div>
     <div class="clear"></div>
   </div>
+  <div class="crm-section">
+    <div class="label">{$form.ldap_base_dn.label} <a onclick='CRM.help("{ts domain='de.systopia.civildap'}LDAP Base DN{/ts}", {literal}{"id":"id-civildap-base_dn","file":"CRM\/Civildap\/Form\/Settings"}{/literal}); return false;' href="#" title="{ts domain='de.systopia.civildap'}Help{/ts}" class="helpicon">&nbsp;</a></div>
+    <div class="content">{$form.ldap_base_dn.html}</div>
+    <div class="clear"></div>
+  </div>
 </div>
 
 <div class="crm-submit-buttons">
