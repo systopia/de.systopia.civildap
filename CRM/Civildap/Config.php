@@ -1,6 +1,6 @@
 <?php
 /*-------------------------------------------------------+
-| SYSTOPIA Rocketchat API Extension                      |
+| SYSTOPIA CiviLdap Extension                            |
 | Copyright (C) 2021 SYSTOPIA                            |
 | Author: P. Batroff (batroff@systopia.de)               |
 +--------------------------------------------------------+
