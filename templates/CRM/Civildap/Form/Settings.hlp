@@ -24,3 +24,7 @@
 {htxt id="id-civildap-server-password"}
   <p>{ts domain="de.systopia.civildap"}LDAP Password{/ts}</p>
 {/htxt}
+
+{htxt id="id-civildap-base_dn"}
+  <p>{ts domain="de.systopia.civildap"}LDAP Base DN{/ts}</p>
+{/htxt}
