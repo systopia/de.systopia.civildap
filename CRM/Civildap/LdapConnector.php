@@ -56,6 +56,11 @@ class CRM_Civildap_LdapConnector extends CRM_Civildap_LdapConnectorBase{
 
   }
 
+  /**
+   * Read entries from a given path (or configured Base DN) and return Entry Object
+   * @param null $path
+   * @return mixed
+   */
   public function read($path = NULL)
   {
     try{
@@ -72,9 +77,18 @@ class CRM_Civildap_LdapConnector extends CRM_Civildap_LdapConnectorBase{
     // TODO: Implement update() method.
   }
 
-  protected function create()
+  public function create($path, $params)
   {
-    // TODO: Implement create() method.
+    $entry = new Entry($path);
+    foreach ($params as $key => $value) {
+      $entry->set($key, $value);
+    }
+    # Create the entry with the LDAP client
+    try {
+      $this->ldap->create($entry);
+    } catch (OperationException $e) {
+      echo sprintf('Error adding entry (%s): %s', $e->getCode(), $e->getMessage()).PHP_EOL;
+    }
   }
 
   protected function delete()

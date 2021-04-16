@@ -10,7 +10,16 @@ use CRM_Civildap_ExtensionUtil as E;
  * @see http://wiki.civicrm.org/confluence/display/CRMDOC/API+Architecture+Standards
  */
 function _civicrm_api3_ldap_create_spec(&$spec) {
-  $spec['magicword']['api.required'] = 1;
+  $spec['uri']['api.required'] = 1;
+  $spec['values']['api.required'] = 1;
+
+  $spec['values'] = array(
+    'name'         => 'values',
+    'api.required' => 1,
+    'type'         => CRM_Utils_Type::T_LONGTEXT,
+    'title'        => 'LDAP Values',
+    'description'  => 'Values to create in the given LDAP Path. JSON formatted',
+  );
 }
 
 /**
@@ -23,20 +32,17 @@ function _civicrm_api3_ldap_create_spec(&$spec) {
  * @throws API_Exception
  */
 function civicrm_api3_ldap_create($params) {
-  if (array_key_exists('magicword', $params) && $params['magicword'] == 'sesame') {
-    $returnValues = array(
-      // OK, return several data rows
-      12 => array('id' => 12, 'name' => 'Twelve'),
-      34 => array('id' => 34, 'name' => 'Thirty four'),
-      56 => array('id' => 56, 'name' => 'Fifty six'),
-    );
-    // ALTERNATIVE: $returnValues = array(); // OK, success
-    // ALTERNATIVE: $returnValues = array("Some value"); // OK, return a single value
+  try {
+    $ldap_connector = new CRM_Civildap_LdapConnector();
+    if (!CRM_Civildap_Utils::isJson($params['values'])) {
+      civicrm_api3_create_error("Malformed parameter 'values'. Please provide a json formatted array");
+      return;
+    }
 
-    // Spec: civicrm_api3_create_success($values = 1, $params = array(), $entity = NULL, $action = NULL)
-    return civicrm_api3_create_success($returnValues, $params, 'NewEntity', 'NewAction');
+    $result = $ldap_connector->create(json_decode($params['uri'], $params['values']));
+    return civicrm_api3_create_success('Success');
   }
-  else {
-    throw new API_Exception(/*errorMessage*/ 'Everyone knows that the magicword is "sesame"', /*errorCode*/ 1234);
+  catch (Exception $e){
+    civicrm_api3_create_error( 'Error occured. Error Message: ' . $e->getMessage());
   }
 }
