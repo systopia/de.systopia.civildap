@@ -13,11 +13,17 @@
 | written permission from the original author(s).        |
 +--------------------------------------------------------*/
 
-include "/../../vendor/autoload.php";
+include __DIR__  . "/../../vendor/autoload.php";
 
 
 use CRM_Civildap_ExtensionUtil as E;
 
+// LDAP Library
+use FreeDSx\Ldap\LdapClient;
+use FreeDSx\Ldap\Operations;
+use FreeDSx\Ldap\Search\Filters;
+use FreeDSx\Ldap\Entry\Entry;
+use FreeDSx\Ldap\Exception\OperationException;
 
 class CRM_Civildap_LdapConnector extends CRM_Civildap_LdapConnectorBase{
 
@@ -32,11 +38,15 @@ class CRM_Civildap_LdapConnector extends CRM_Civildap_LdapConnectorBase{
       $connection_details['ldap_password'] = $settings['ldap_password'];
       $connection_details['ldap_base_dn'] = $settings['ldap_base_dn'];
     }
+    try {
+      $this->ldap = new LdapClient([
+        'servers' => [$connection_details['ldap_server_url']],
+        'base_dn' => $connection_details['ldap_base_dn']
+      ]);
+    } catch (Exception $e) {
+      echo "FAIL. Error message: " . $e->getMessage();
+    }
 
-    $this->ldap = new LdapClient([
-      'servers' => [$connection_details['ldap_server_url']],
-      'base_dn' => $connection_details['ldap_base_dn']
-    ]);
 
     # Encrypt the connection prior to binding
     $this->ldap->startTls();
@@ -46,8 +56,14 @@ class CRM_Civildap_LdapConnector extends CRM_Civildap_LdapConnectorBase{
 
   }
 
-  protected function read()
+  public function read($path = NULL)
   {
+    try{
+      return $this->ldap->read($path);
+    } catch(Exception $e) {
+      echo "Exception while reading Elements in '{$path}'. Error message: " . $e->getMessage();
+    }
+
     // TODO: Implement read() method.
   }
 

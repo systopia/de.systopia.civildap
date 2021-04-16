@@ -13,7 +13,7 @@
 | written permission from the original author(s).        |
 +--------------------------------------------------------*/
 
-include "/../../vendor/autoload.php";
+include __DIR__  . "/../../vendor/autoload.php";
 
 
 use CRM_Civildap_ExtensionUtil as E;
@@ -39,18 +39,18 @@ abstract class CRM_Civildap_LdapConnectorBase
   public function __construct($connection_details = [])
   {
     if (!file_exists(__DIR__ . '/../../vendor/autoload.php')) {
-      throw new Exception("Httpful not available. Please go to resources/lib and install via composer");
+      throw new Exception("FreeDSx LDAP not available. Please 'composer install' in the base folder of this Extension");
     }
     require __DIR__ . '/../../vendor/autoload.php';
     $this->config = new CRM_Civildap_Config();
 
     // connect to ldap sever
-    $this->ldap = $this->connect($connection_details);
+   $this->connect($connection_details);
   }
 
   abstract protected function connect($connection_details);
 
-  abstract protected function read();
+  abstract protected function read($path);
 
   abstract protected function update();
 
