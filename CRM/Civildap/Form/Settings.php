@@ -82,12 +82,12 @@ class CRM_Civildap_Form_Settings extends CRM_Core_Form {
     $this->_submitValues;
     $url = $this->_submitValues['ldap_server_url'];
 
-    if (!preg_match("/\b(?:https:\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i", $url)) {
-      $this->_errors["ldap_server_url"] = "Please enter a valid LDA URl! Domain needs https://domain.com - no trailing / in the end";
-    }
-    if (preg_match("/.*\/$/", $url)) {
-      $this->_errors["ldap_server_url"] = "Please don't use a trailing / for the url";
-    }
+//    if (!preg_match("/\b(?:https:\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i", $url)) {
+//      $this->_errors["ldap_server_url"] = "Please enter a valid LDA URl! Domain needs https://domain.com - no trailing / in the end";
+//    }
+//    if (preg_match("/.*\/$/", $url)) {
+//      $this->_errors["ldap_server_url"] = "Please don't use a trailing / for the url";
+//    }
 
     return count($this->_errors) == 0;
   }
