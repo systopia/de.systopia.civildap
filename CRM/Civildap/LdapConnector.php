@@ -80,17 +80,32 @@ class CRM_Civildap_LdapConnector extends CRM_Civildap_LdapConnectorBase
         // TODO: Implement update() method.
     }
 
+    /**
+     * @param $path
+     * @param $params
+     *
+     * @throws \API_Exception
+     */
     public function create($path, $params)
     {
-        $entry = new Entry($path);
-        foreach ($params as $key => $value) {
-            $entry->set($key, $value);
-        }
+        $debug_path = "ou=users,dc=be,dc=linksjugend-solid,dc=de";
+        $debug_data = [
+            "objectClass" => "ljsUser",
+            "cn" => "HELLO_THERE",
+            "mail" => "kenobster@jedi.com",
+            "uid" => "hello_there",
+            "uidNumber" => "1234567890",
+            "ljsAnonMail" => "test@liju-solid.de",
+            "ljsMemberId" => "999",
+        ];
+//        $entry = $this->create_parameters($path, $params);
+        $entry = $this->create_parameters($debug_path, $debug_data);
         # Create the entry with the LDAP client
         try {
             $this->ldap->create($entry);
         } catch (OperationException $e) {
-            echo sprintf('Error adding entry (%s): %s', $e->getCode(), $e->getMessage()) . PHP_EOL;
+            $this->log("Error creating LDAP Entry. Message: {$e->getMessage()}", "error");
+            throw new API_Exception($e->getMessage());
         }
     }
 
@@ -129,5 +144,21 @@ class CRM_Civildap_LdapConnector extends CRM_Civildap_LdapConnectorBase
                 echo "Entry: " . $entry->getDn() . PHP_EOL;
             }
         }
+    }
+
+
+    /**
+     * @param $path
+     * @param $params
+     *
+     * @return \FreeDSx\Ldap\Entry\Entry
+     */
+    private function create_parameters($path, $params)
+    {
+        $entry = new Entry($path);
+        foreach ($params as $key => $value) {
+            $entry->set($key, $value);
+        }
+        return $entry;
     }
 }

@@ -39,13 +39,13 @@ function civicrm_api3_ldap_create($params)
 {
     try {
         $ldap_connector = new CRM_Civildap_LdapConnector();
-        if (!CRM_Civildap_Utils::isJson($params['values'])) {
-            civicrm_api3_create_error("Malformed parameter 'values'. Please provide a json formatted array");
-            return;
-        }
+//        if (!CRM_Civildap_Utils::isJson($params['values'])) {
+//            civicrm_api3_create_error("Malformed parameter 'values'. Please provide a json formatted array");
+//            return;
+//        }
 
-        $result = $ldap_connector->create(json_decode($params['uri'], $params['values']));
-        return civicrm_api3_create_success('Success');
+        $ldap_connector->create($params['uri'], $params['values']);
+        return civicrm_api3_create_success('Created LDAP Entry');
     } catch (Exception $e) {
         civicrm_api3_create_error('Error occured. Error Message: ' . $e->getMessage());
     }
