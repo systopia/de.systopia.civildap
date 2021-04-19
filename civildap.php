@@ -1,6 +1,7 @@
 <?php
 
 require_once 'civildap.civix.php';
+
 use CRM_Civildap_ExtensionUtil as E;
 
 /**
@@ -8,8 +9,9 @@ use CRM_Civildap_ExtensionUtil as E;
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_config
  */
-function civildap_civicrm_config(&$config) {
-  _civildap_civix_civicrm_config($config);
+function civildap_civicrm_config(&$config)
+{
+    _civildap_civix_civicrm_config($config);
 }
 
 /**
@@ -17,8 +19,9 @@ function civildap_civicrm_config(&$config) {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_xmlMenu
  */
-function civildap_civicrm_xmlMenu(&$files) {
-  _civildap_civix_civicrm_xmlMenu($files);
+function civildap_civicrm_xmlMenu(&$files)
+{
+    _civildap_civix_civicrm_xmlMenu($files);
 }
 
 /**
@@ -26,8 +29,9 @@ function civildap_civicrm_xmlMenu(&$files) {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_install
  */
-function civildap_civicrm_install() {
-  _civildap_civix_civicrm_install();
+function civildap_civicrm_install()
+{
+    _civildap_civix_civicrm_install();
 }
 
 /**
@@ -35,8 +39,9 @@ function civildap_civicrm_install() {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_postInstall
  */
-function civildap_civicrm_postInstall() {
-  _civildap_civix_civicrm_postInstall();
+function civildap_civicrm_postInstall()
+{
+    _civildap_civix_civicrm_postInstall();
 }
 
 /**
@@ -44,8 +49,9 @@ function civildap_civicrm_postInstall() {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_uninstall
  */
-function civildap_civicrm_uninstall() {
-  _civildap_civix_civicrm_uninstall();
+function civildap_civicrm_uninstall()
+{
+    _civildap_civix_civicrm_uninstall();
 }
 
 /**
@@ -53,8 +59,9 @@ function civildap_civicrm_uninstall() {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_enable
  */
-function civildap_civicrm_enable() {
-  _civildap_civix_civicrm_enable();
+function civildap_civicrm_enable()
+{
+    _civildap_civix_civicrm_enable();
 }
 
 /**
@@ -62,8 +69,9 @@ function civildap_civicrm_enable() {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_disable
  */
-function civildap_civicrm_disable() {
-  _civildap_civix_civicrm_disable();
+function civildap_civicrm_disable()
+{
+    _civildap_civix_civicrm_disable();
 }
 
 /**
@@ -71,8 +79,9 @@ function civildap_civicrm_disable() {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_upgrade
  */
-function civildap_civicrm_upgrade($op, CRM_Queue_Queue $queue = NULL) {
-  return _civildap_civix_civicrm_upgrade($op, $queue);
+function civildap_civicrm_upgrade($op, CRM_Queue_Queue $queue = null)
+{
+    return _civildap_civix_civicrm_upgrade($op, $queue);
 }
 
 /**
@@ -83,8 +92,9 @@ function civildap_civicrm_upgrade($op, CRM_Queue_Queue $queue = NULL) {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_managed
  */
-function civildap_civicrm_managed(&$entities) {
-  _civildap_civix_civicrm_managed($entities);
+function civildap_civicrm_managed(&$entities)
+{
+    _civildap_civix_civicrm_managed($entities);
 }
 
 /**
@@ -96,8 +106,9 @@ function civildap_civicrm_managed(&$entities) {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_caseTypes
  */
-function civildap_civicrm_caseTypes(&$caseTypes) {
-  _civildap_civix_civicrm_caseTypes($caseTypes);
+function civildap_civicrm_caseTypes(&$caseTypes)
+{
+    _civildap_civix_civicrm_caseTypes($caseTypes);
 }
 
 /**
@@ -110,8 +121,9 @@ function civildap_civicrm_caseTypes(&$caseTypes) {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_angularModules
  */
-function civildap_civicrm_angularModules(&$angularModules) {
-  _civildap_civix_civicrm_angularModules($angularModules);
+function civildap_civicrm_angularModules(&$angularModules)
+{
+    _civildap_civix_civicrm_angularModules($angularModules);
 }
 
 /**
@@ -119,8 +131,9 @@ function civildap_civicrm_angularModules(&$angularModules) {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_alterSettingsFolders
  */
-function civildap_civicrm_alterSettingsFolders(&$metaDataFolders = NULL) {
-  _civildap_civix_civicrm_alterSettingsFolders($metaDataFolders);
+function civildap_civicrm_alterSettingsFolders(&$metaDataFolders = null)
+{
+    _civildap_civix_civicrm_alterSettingsFolders($metaDataFolders);
 }
 
 /**
@@ -130,8 +143,9 @@ function civildap_civicrm_alterSettingsFolders(&$metaDataFolders = NULL) {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_entityTypes
  */
-function civildap_civicrm_entityTypes(&$entityTypes) {
-  _civildap_civix_civicrm_entityTypes($entityTypes);
+function civildap_civicrm_entityTypes(&$entityTypes)
+{
+    _civildap_civix_civicrm_entityTypes($entityTypes);
 }
 
 // --- Functions below this ship commented out. Uncomment as required. ---
@@ -141,23 +155,23 @@ function civildap_civicrm_entityTypes(&$entityTypes) {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_preProcess
  *
-function civildap_civicrm_preProcess($formName, &$form) {
-
-} // */
+ * function civildap_civicrm_preProcess($formName, &$form) {
+ *
+ * } // */
 
 /**
  * Implements hook_civicrm_navigationMenu().
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_navigationMenu
  *
-function civildap_civicrm_navigationMenu(&$menu) {
-  _civildap_civix_insert_navigation_menu($menu, 'Mailings', array(
-    'label' => E::ts('New subliminal message'),
-    'name' => 'mailing_subliminal_message',
-    'url' => 'civicrm/mailing/subliminal',
-    'permission' => 'access CiviMail',
-    'operator' => 'OR',
-    'separator' => 0,
-  ));
-  _civildap_civix_navigationMenu($menu);
-} // */
+ * function civildap_civicrm_navigationMenu(&$menu) {
+ * _civildap_civix_insert_navigation_menu($menu, 'Mailings', array(
+ * 'label' => E::ts('New subliminal message'),
+ * 'name' => 'mailing_subliminal_message',
+ * 'url' => 'civicrm/mailing/subliminal',
+ * 'permission' => 'access CiviMail',
+ * 'operator' => 'OR',
+ * 'separator' => 0,
+ * ));
+ * _civildap_civix_navigationMenu($menu);
+ * } // */

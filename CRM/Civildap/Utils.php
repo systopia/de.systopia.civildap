@@ -16,17 +16,21 @@
 
 use CRM_Civildap_ExtensionUtil as E;
 
-class CRM_Civildap_Utils {
+class CRM_Civildap_Utils
+{
 
 
-  /**
-   * Helper function to check if string is Json
-   * @param $string
-   * @return bool
-   */
-  public static function isJson($string) {
-    json_decode($string);
-    return (json_last_error() == JSON_ERROR_NONE);
-  }
+    /**
+     * Helper function to check if string is Json
+     *
+     * @param $string
+     *
+     * @return bool
+     */
+    public static function isJson($string)
+    {
+        json_decode($string);
+        return (json_last_error() == JSON_ERROR_NONE);
+    }
 }
 

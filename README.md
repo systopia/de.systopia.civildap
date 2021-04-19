@@ -2,7 +2,8 @@
 
 ![Screenshot](/images/screenshot.png)
 
-(*FIXME: In one or two paragraphs, describe what the extension does and why one would download it. *)
+(*FIXME: In one or two paragraphs, describe what the extension does and why one
+would download it. *)
 
 The extension is licensed under [AGPL-3.0](LICENSE.txt).
 
@@ -27,8 +28,9 @@ cv dl de.systopia.civildap@https://github.com/FIXME/de.systopia.civildap/archive
 
 ## Installation (CLI, Git)
 
-Sysadmins and developers may clone the [Git](https://en.wikipedia.org/wiki/Git) repo for this extension and
-install it with the command-line tool [cv](https://github.com/civicrm/cv).
+Sysadmins and developers may clone the [Git](https://en.wikipedia.org/wiki/Git)
+repo for this extension and install it with the command-line
+tool [cv](https://github.com/civicrm/cv).
 
 ```bash
 git clone https://github.com/FIXME/de.systopia.civildap.git
@@ -37,7 +39,8 @@ cv en civildap
 
 ## Usage
 
-(* FIXME: Where would a new user navigate to get started? What changes would they see? *)
+(* FIXME: Where would a new user navigate to get started? What changes would
+they see? *)
 
 ## Known Issues
 

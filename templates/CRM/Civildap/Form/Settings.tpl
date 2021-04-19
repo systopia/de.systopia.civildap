@@ -13,27 +13,41 @@
 +-------------------------------------------------------*}
 
 
-<br/><h3>{ts domain='de.systopia.civildap'}Rocketchat Server Configuration{/ts}</h3><br/>
+<br/>
+<h3>{ts domain='de.systopia.civildap'}Rocketchat Server Configuration{/ts}</h3>
+<br/>
 
 
 <div class="crm-section civildap civildap">
   <div class="crm-section">
-    <div class="label">{$form.ldap_server_url.label} <a onclick='CRM.help("{ts domain='de.systopia.civildap'}LDAP Server URL{/ts}", {literal}{"id":"id-civildap-server-url","file":"CRM\/Civildap\/Form\/Settings"}{/literal}); return false;' href="#" title="{ts domain='de.systopia.civildap'}Help{/ts}" class="helpicon">&nbsp;</a></div>
+    <div class="label">{$form.ldap_server_url.label} <a
+              onclick='CRM.help("{ts domain='de.systopia.civildap'}LDAP Server URL{/ts}", {literal}{"id":"id-civildap-server-url","file":"CRM\/Civildap\/Form\/Settings"}{/literal}); return false;'
+              href="#" title="{ts domain='de.systopia.civildap'}Help{/ts}"
+              class="helpicon">&nbsp;</a></div>
     <div class="content">{$form.ldap_server_url.html}</div>
     <div class="clear"></div>
   </div>
   <div class="crm-section">
-    <div class="label">{$form.ldap_user.label} <a onclick='CRM.help("{ts domain='de.systopia.civildap'}LDAP Username{/ts}", {literal}{"id":"id-civildap-server-username","file":"CRM\/Civildap\/Form\/Settings"}{/literal}); return false;' href="#" title="{ts domain='de.systopia.civildap'}Help{/ts}" class="helpicon">&nbsp;</a></div>
+    <div class="label">{$form.ldap_user.label} <a
+              onclick='CRM.help("{ts domain='de.systopia.civildap'}LDAP Username{/ts}", {literal}{"id":"id-civildap-server-username","file":"CRM\/Civildap\/Form\/Settings"}{/literal}); return false;'
+              href="#" title="{ts domain='de.systopia.civildap'}Help{/ts}"
+              class="helpicon">&nbsp;</a></div>
     <div class="content">{$form.ldap_user.html}</div>
     <div class="clear"></div>
   </div>
   <div class="crm-section">
-    <div class="label">{$form.ldap_password.label} <a onclick='CRM.help("{ts domain='de.systopia.civildap'}LDAP User password{/ts}", {literal}{"id":"id-civildap-server-password","file":"CRM\/Civildap\/Form\/Settings"}{/literal}); return false;' href="#" title="{ts domain='de.systopia.civildap'}Help{/ts}" class="helpicon">&nbsp;</a></div>
+    <div class="label">{$form.ldap_password.label} <a
+              onclick='CRM.help("{ts domain='de.systopia.civildap'}LDAP User password{/ts}", {literal}{"id":"id-civildap-server-password","file":"CRM\/Civildap\/Form\/Settings"}{/literal}); return false;'
+              href="#" title="{ts domain='de.systopia.civildap'}Help{/ts}"
+              class="helpicon">&nbsp;</a></div>
     <div class="content">{$form.ldap_password.html}</div>
     <div class="clear"></div>
   </div>
   <div class="crm-section">
-    <div class="label">{$form.ldap_base_dn.label} <a onclick='CRM.help("{ts domain='de.systopia.civildap'}LDAP Base DN{/ts}", {literal}{"id":"id-civildap-base_dn","file":"CRM\/Civildap\/Form\/Settings"}{/literal}); return false;' href="#" title="{ts domain='de.systopia.civildap'}Help{/ts}" class="helpicon">&nbsp;</a></div>
+    <div class="label">{$form.ldap_base_dn.label} <a
+              onclick='CRM.help("{ts domain='de.systopia.civildap'}LDAP Base DN{/ts}", {literal}{"id":"id-civildap-base_dn","file":"CRM\/Civildap\/Form\/Settings"}{/literal}); return false;'
+              href="#" title="{ts domain='de.systopia.civildap'}Help{/ts}"
+              class="helpicon">&nbsp;</a></div>
     <div class="content">{$form.ldap_base_dn.html}</div>
     <div class="clear"></div>
   </div>
