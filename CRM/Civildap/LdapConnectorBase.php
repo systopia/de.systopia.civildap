@@ -64,5 +64,42 @@ abstract class CRM_Civildap_LdapConnectorBase
     abstract protected function delete();
 
     abstract protected function search();
+
+    /**
+     * @param $message
+     */
+    protected function log($message, $log_level = 'debug')
+    {
+        switch ($log_level) {
+            case 'error':
+                Civi::log()->error($message);
+                break;
+            case 'alert':
+                Civi::log()->alert($message);
+                break;
+            case 'debug':
+                Civi::log()->debug($message);
+                break;
+            case 'critical':
+                Civi::log()->critical($message);
+                break;
+            case 'emergency':
+                Civi::log()->emergency($message);
+                break;
+            case 'info':
+                Civi::log()->info($message);
+                break;
+            case 'notice':
+                Civi::log()->notice($message);
+                break;
+            case 'warning':
+                Civi::log()->warning($message);
+                break;
+            default:
+                Civi::log()->log($message);
+                break;
+        }
+    }
+
 }
 
