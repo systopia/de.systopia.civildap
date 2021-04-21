@@ -98,6 +98,7 @@ class CRM_Civildap_LdapConnector extends CRM_Civildap_LdapConnectorBase
             "ljsAnonMail" => "test@liju-solid.de",
             "ljsMemberId" => "999",
         ];
+        // TODO: userPassword encryption function check!
 //        $entry = $this->create_parameters($path, $params);
         $entry = $this->create_parameters($debug_path, $debug_data);
         # Create the entry with the LDAP client
@@ -109,7 +110,7 @@ class CRM_Civildap_LdapConnector extends CRM_Civildap_LdapConnectorBase
         }
     }
 
-    protected function delete()
+    public function delete($ldap_id)
     {
         // TODO: Implement delete() method.
     }

@@ -61,7 +61,7 @@ abstract class CRM_Civildap_LdapConnectorBase
 
     abstract protected function create($path, $params);
 
-    abstract protected function delete();
+    abstract protected function delete($ldap_id);
 
     abstract protected function search();
 
